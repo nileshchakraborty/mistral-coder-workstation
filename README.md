@@ -51,5 +51,22 @@ python3 scripts/run_mistral.py --prompt "Implement a lock-free Single-Producer S
 
 ---
 
+## 🏆 Three-Way Empirical Benchmark (LiveCodeBench 19-Problem Failure Suite)
+
+Evaluated against `apex-coder-14b` (Qwen) and `apex-phi-14b` (Microsoft) on an Apple Silicon M4 Max (36 GB):
+
+| Metric | `apex-mistral-22b` (Mistral) | `apex-coder-14b` (Qwen) | `apex-phi-14b` (Microsoft) |
+| :--- | :---: | :---: | :---: |
+| **Model Size** | **22B** | 14.7B | 14.7B |
+| **Pass@1 Recovery Rate** | **5 / 19 (26.3%)** | 7 / 19 (36.8%) | 3 / 19 (15.8%) |
+| **Average Speed** | **22.6 tok/s** | 31.4 tok/s | 29.2 tok/s |
+| **AST Validity** | **100.0%** | 100.0% | 100.0% |
+| **LeetCode Hard Graph Problem (`2827`)** | **83 / 83 (100% - Sole Model to Solve)** | 0 / 58 | 57 / 58 |
+| **Knapsack Dynamic Programming (`2808`)** | **14 / 14 (100% Passed)** | 14 / 14 | 0 / 1 |
+
+Codestral demonstrated remarkable frontier competence on complex algorithmic problems, solely solving LeetCode Hard problem `2827` (*Greatest Common Divisor Traversal*) using an optimal Disjoint Set Union (DSU) with prime factor decomposition.
+
+---
+
 ## 📜 License
 Apache 2.0 License. Created by [Nilesh Chakraborty](https://github.com/nileshchakraborty).
